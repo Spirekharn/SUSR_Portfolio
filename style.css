@@ -1752,6 +1752,11 @@ footer::before {
         font-size: 1.8rem;
         text-align: center; /* Center links in mobile menu */
     }
+    .head {
+        min-height: auto; /* Allow height to adjust to content on mobile */
+        padding-top: 10rem; /* Add some top padding */
+        padding-bottom: 5rem; /* Add some bottom padding */
+    }
     .head-title {
         font-size: 4.5rem;
     }
@@ -1833,10 +1838,10 @@ footer::before {
         font-size: 1.8rem;
     } */
     .head-image-container {
-        width: 85vw; /* More aggressive scaling for small phones */
-        height: 85vw; /* Maintain aspect ratio */
-        max-width: 250px; /* Cap the size for very small phones */
-        max-height: 250px; /* Cap the size for very small phones */
+        width: 80vw; /* Adjusted for very small phones */
+        height: 80vw; /* Maintain aspect ratio */
+        max-width: 220px; /* Smaller max size for very narrow screens */
+        max-height: 220px; /* Smaller max size for very narrow screens */
         margin: 0 auto; /* Ensure centering */
     }
     .section-title {
