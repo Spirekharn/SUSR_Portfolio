@@ -15,6 +15,14 @@
 
     <header>
         <a href="#head" class="logo">Swagoto</a>
+        <!-- Hidden checkbox to control the mobile menu with pure CSS -->
+        <input type="checkbox" id="menu-toggle" class="hidden-checkbox">
+        <!-- Label acts as the hamburger icon, linked to the checkbox -->
+        <label for="menu-toggle" class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
         <nav>
             <a href="#head" class="active">Home</a>
             <a href="#about">About</a>
@@ -24,11 +32,6 @@
             <a href="#testimonials">Testimonials</a>
             <a href="#contact">Contact</a>
         </nav>
-        <div class="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
     </header>
 
     <section class="head" id="head">
@@ -36,11 +39,10 @@
             <div class="head-content">
                 <p class="head-glitch">Hello, I'm</p>
                 <h1 class="head-title">Swagoto Utsab <span class="highlight">Singha Roy</span></h1>
-                <div class="typing-container">
-                    <span class="typing-text"></span><span class="cursor"></span>
-                </div>
-                <p class="head-description">
-                    A passionate and creative Computer Science Engineer with habbit of building new and intriguing softwares the bring codes to life
+                <!-- The typing animation was JavaScript-based and has been removed.
+                     The description now stands as static text. -->
+                <p class="head-description static-description">
+                    A passionate and creative Computer Science Engineer with a habit of building new and intriguing software that brings code to life.
                 </p>
                 <div class="head-stats">
                     <div class="stat-item">
@@ -422,7 +424,7 @@
         </div>
         <div class="portfolio-grid">
             <div class="portfolio-item" data-category="java">
-                <img src="https://placehold.co/400x250/E03A5F/FFFFFF?text=E-commerce+Java" alt="E-commerce Shopping System" class="portfolio-image">
+                <img src="Ecommerce.webp" class="portfolio-image">
                 <div class="portfolio-info">
                     <p class="portfolio-category">Java Development</p>
                     <h3 class="portfolio-title">E-commerce Shopping System</h3>
@@ -432,17 +434,17 @@
                 </div>
             </div>
             <div class="portfolio-item" data-category="database">
-                <img src="https://placehold.co/400x250/C12A4C/FFFFFF?text=SQL+MySQL" alt="SQL Database System" class="portfolio-image">
+                <img src="Sql.webp" class="portfolio-image">
                 <div class="portfolio-info">
                     <p class="portfolio-category">Database Management</p>
                     <h3 class="portfolio-title">SQL Database System</h3>
                     <p class="portfolio-description">
-                        Designed and implemented a scalable SQL database system using MySQL for efficient data handling.
+                        Designed and implemented a library SQL database system using MySQL for efficient data handling.
                     </p>
                 </div>
             </div>
             <div class="portfolio-item" data-category="c">
-                <img src="https://placehold.co/400x250/FF8BA4/FFFFFF?text=Calculator+C" alt="Calculator C" class="portfolio-image">
+                <img src="Calculator with switch.png" class="portfolio-image">
                 <div class="portfolio-info">
                     <p class="portfolio-category">C Programming</p>
                     <h3 class="portfolio-title">Calculator using C</h3>
@@ -452,7 +454,7 @@
                 </div>
             </div>
             <div class="portfolio-item" data-category="c">
-                <img src="https://placehold.co/400x250/FF4D71/FFFFFF?text=Tic-Tac-Toe+C" alt="Tic-Tac-Toe Game C" class="portfolio-image">
+                <img src="Tic-tac-toe.png" class="portfolio-image">
                 <div class="portfolio-info">
                     <p class="portfolio-category">C Programming</p>
                     <h3 class="portfolio-title">Tic-Tac-Toe Game C</h3>
@@ -462,7 +464,7 @@
                 </div>
             </div>
             <div class="portfolio-item" data-category="java">
-                <img src="https://placehold.co/400x250/E03A5F/FFFFFF?text=To-do+Java" alt="To-do list Java" class="portfolio-image">
+                <img src="To-do.png" alt="To-do list Java" class="portfolio-image">
                 <div class="portfolio-info">
                     <p class="portfolio-category">Java Development</p>
                     <h3 class="portfolio-title">To-do List using Java</h3>
@@ -472,7 +474,7 @@
                 </div>
             </div>
             <div class="portfolio-item" data-category="c">
-                <img src="https://placehold.co/400x250/C12A4C/FFFFFF?text=Number+Guessing+C" alt="Number Guessing Game C" class="portfolio-image">
+                <img src="Number guessing.jpg" alt="Number Guessing Game C" class="portfolio-image">
                 <div class="portfolio-info">
                     <p class="portfolio-category">C Programming</p>
                     <h3 class="portfolio-title">Number Guessing Game C</h3>

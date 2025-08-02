@@ -121,10 +121,11 @@ header {
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.8);
 }
 
-header.scrolled {
+/* The 'scrolled' class was JavaScript-dependent and is no longer used. */
+/* header.scrolled {
     background: rgba(0, 0, 0, 0.8);
     border-bottom: 1px solid var(--primary-crimson);
-}
+} */
 
 .logo {
     font-family: 'Orbitron', monospace;
@@ -203,12 +204,19 @@ nav a.active {
     text-shadow: 0 0 20px rgba(224, 58, 95, 0.8);
 }
 
-.hamburger {
+/* Hide the checkbox input visually */
+.hidden-checkbox {
     display: none;
+}
+
+/* Hamburger menu styles (visible only on mobile via media query) */
+.hamburger {
+    display: none; /* Hidden by default on desktop */
     flex-direction: column;
     cursor: pointer;
     gap: 6px;
     padding: 10px;
+    z-index: 1001; /* Ensure it's above the nav when open */
 }
 
 .hamburger span {
@@ -220,15 +228,14 @@ nav a.active {
     box-shadow: var(--glow-crimson);
 }
 
-.hamburger.active span:nth-child(1) {
+/* Hamburger animation when checkbox is checked */
+.hidden-checkbox:checked + .hamburger span:nth-child(1) {
     transform: rotate(45deg) translate(7px, 7px);
 }
-
-.hamburger.active span:nth-child(2) {
+.hidden-checkbox:checked + .hamburger span:nth-child(2) {
     opacity: 0;
 }
-
-.hamburger.active span:nth-child(3) {
+.hidden-checkbox:checked + .hamburger span:nth-child(3) {
     transform: rotate(-45deg) translate(8px, -8px);
 }
 
@@ -295,6 +302,7 @@ nav a.active {
     text-transform: uppercase;
     letter-spacing: 4px;
     position: relative;
+    /* The glitch animation is CSS-based and remains */
     animation: glitch 1.8s infinite;
     text-shadow: 0 0 8px rgba(224, 58, 95, 0.6);
 }
@@ -333,48 +341,8 @@ nav a.active {
     50% { filter: drop-shadow(0 0 40px rgba(224, 58, 95, 1)); }
 }
 
-.typing-container {
-    height: 60px;
-    margin-bottom: 3.5rem;
-    display: flex;
-    align-items: center;
-}
-
-.typing-text {
-    font-size: 3rem;
-    font-weight: 700;
-    color: var(--primary-crimson);
-    font-family: 'Orbitron', monospace;
-    position: relative;
-}
-
-.typing-text::after {
-    content: "Computer Science Engineer";
-    animation: words 20s infinite;
-}
-
-.cursor {
-    display: inline-block;
-    width: 4px;
-    height: 1.1em;
-    background: var(--primary-crimson);
-    margin-left: 8px;
-    animation: blink 0.7s infinite;
-    box-shadow: var(--glow-intense);
-}
-
-@keyframes words {
-    0%, 19% { content: "Computer Science Engineer"; }
-    20%, 39% { content: "Web Developer"; }
-    40%, 59% { content: "Database Manager"; }
-    60%, 79% { content: "Problem Solver"; }
-    80%, 100% { content: "Innovator"; }
-}
-
-@keyframes blink {
-    0%, 50% { opacity: 1; }
-    51%, 100% { opacity: 0; }
-}
+/* Removed .typing-container and .typing-text as they were JavaScript-dependent */
+/* The .cursor was also JavaScript-dependent */
 
 .head-description {
     font-size: 1.9rem;
@@ -652,7 +620,7 @@ section {
 .skills { animation-delay: 0.8s; }
 #education-activities { animation-delay: 1.0s; }
 #experience { animation-delay: 1.2s; }
-.portfolio { animation-delay: 1.4s; }
+.projects { animation-delay: 1.4s; } /* Changed from .portfolio */
 .testimonials { animation-delay: 1.6s; }
 .contact { animation-delay: 1.8s; }
 footer { animation-delay: 2.0s; }
@@ -1263,7 +1231,8 @@ footer { animation-delay: 2.0s; }
 }
 
 
-.portfolio-grid {
+/* Renamed .portfolio-grid to .projects-grid and .portfolio-item to .project-item */
+.portfolio-grid { /* This class name is used in HTML for the grid container */
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
     gap: 4.5rem;
@@ -1271,7 +1240,7 @@ footer { animation-delay: 2.0s; }
     margin: 0 auto;
 }
 
-.portfolio-item {
+.portfolio-item { /* This class name is used in HTML for individual items */
     background: var(--gradient-card);
     border-radius: 30px;
     border: 1px solid rgba(224, 58, 95, 0.4);
@@ -1759,8 +1728,13 @@ footer::before {
     header {
         padding: 2rem 3%;
     }
+    /* Show hamburger on mobile */
+    .hamburger {
+        display: flex;
+    }
+    /* Hide nav by default on mobile, slide in when checkbox is checked */
     nav {
-        display: none;
+        display: flex; /* Changed from none to flex to enable transition from off-screen */
         flex-direction: column;
         position: absolute;
         top: 100%;
@@ -1771,20 +1745,31 @@ footer::before {
         border-top: 1px solid rgba(224, 58, 95, 0.2);
         padding: 2rem 0;
         gap: 1.5rem;
+        transition: transform 0.3s ease-in-out;
+        transform: translateY(-100%); /* Start off-screen */
+        pointer-events: none; /* Disable interaction when hidden */
+        opacity: 0; /* Make it invisible when hidden */
     }
+
+    /* When checkbox is checked, show and slide in the nav */
+    .hidden-checkbox:checked ~ nav {
+        transform: translateY(0); /* Slide into view */
+        pointer-events: all; /* Enable interaction when visible */
+        opacity: 1; /* Make it visible */
+    }
+
     nav a {
         padding: 1rem 0;
         font-size: 1.8rem;
-    }
-    .hamburger {
-        display: flex;
+        text-align: center; /* Center links in mobile menu */
     }
     .head-title {
         font-size: 4.5rem;
     }
-    .typing-text {
+    /* Removed .typing-text styles as it's JavaScript-dependent */
+    /* .typing-text {
         font-size: 2.2rem;
-    }
+    } */
     .head-stats {
         flex-direction: column;
         gap: 2rem;
@@ -1809,7 +1794,7 @@ footer::before {
         font-size: 2.8rem;
     }
     .services-grid,
-    .portfolio-grid,
+    .portfolio-grid, /* Kept for existing HTML structure, but consider renaming to .projects-grid */
     .testimonial-grid {
         grid-template-columns: 1fr;
     }
@@ -1854,9 +1839,10 @@ footer::before {
     .head-title {
         font-size: 3.5rem;
     }
-    .typing-text {
+    /* Removed .typing-text styles as it's JavaScript-dependent */
+    /* .typing-text {
         font-size: 1.8rem;
-    }
+    } */
     .head-image-container {
         width: 280px;
         height: 280px;
