@@ -1838,10 +1838,10 @@ footer::before {
         font-size: 1.8rem;
     } */
     .head-image-container {
-        width: 80vw; /* Adjusted for very small phones */
-        height: 80vw; /* Maintain aspect ratio */
-        max-width: 220px; /* Smaller max size for very narrow screens */
-        max-height: 220px; /* Smaller max size for very narrow screens */
+        width: 75vw; /* Adjusted for very small phones */
+        height: 75vw; /* Maintain aspect ratio */
+        max-width: 200px; /* Smaller max size for very narrow screens */
+        max-height: 200px; /* Smaller max size for very narrow screens */
         margin: 0 auto; /* Ensure centering */
     }
     .section-title {
