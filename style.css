@@ -51,9 +51,9 @@ body::before {
     width: 100%;
     height: 100%;
     background:
-        radial-gradient(circle at 15% 40%, rgba(224, 58, 95, 0.1) 0%, transparent 60%), /* Reduced opacity */
-        radial-gradient(circle at 85% 25%, rgba(193, 42, 76, 0.08) 0%, transparent 60%), /* Reduced opacity */
-        radial-gradient(circle at 40% 90%, rgba(255, 77, 113, 0.06) 0%, transparent 60%), /* Reduced opacity */
+        radial-gradient(circle at 15% 40%, rgba(224, 58, 95, 0.1) 0%, transparent 60%),
+        radial-gradient(circle at 85% 25%, rgba(193, 42, 76, 0.08) 0%, transparent 60%),
+        radial-gradient(circle at 40% 90%, rgba(255, 77, 113, 0.06) 0%, transparent 60%),
         var(--abyss-dark);
     z-index: -2;
     animation: backgroundShift 15s ease-in-out infinite;
@@ -120,12 +120,6 @@ header {
     border-radius: 0 0 25px 25px;
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.8);
 }
-
-/* The 'scrolled' class was JavaScript-dependent and is no longer used. */
-/* header.scrolled {
-    background: rgba(0, 0, 0, 0.8);
-    border-bottom: 1px solid var(--primary-crimson);
-} */
 
 .logo {
     font-family: 'Orbitron', monospace;
@@ -204,19 +198,17 @@ nav a.active {
     text-shadow: 0 0 20px rgba(224, 58, 95, 0.8);
 }
 
-/* Hide the checkbox input visually */
 .hidden-checkbox {
     display: none;
 }
 
-/* Hamburger menu styles (visible only on mobile via media query) */
 .hamburger {
-    display: none; /* Hidden by default on desktop */
+    display: none;
     flex-direction: column;
     cursor: pointer;
     gap: 6px;
     padding: 10px;
-    z-index: 1001; /* Ensure it's above the nav when open */
+    z-index: 1001;
 }
 
 .hamburger span {
@@ -228,7 +220,6 @@ nav a.active {
     box-shadow: var(--glow-crimson);
 }
 
-/* Hamburger animation when checkbox is checked */
 .hidden-checkbox:checked + .hamburger span:nth-child(1) {
     transform: rotate(45deg) translate(7px, 7px);
 }
@@ -257,7 +248,6 @@ nav a.active {
     right: -20%;
     width: 80%;
     height: 200%;
-    /* Reduced opacity to make the glow much more subtle */
     background: radial-gradient(ellipse, rgba(224, 58, 95, 0.1) 0%, transparent 70%);
     animation: headGlow 8s ease-in-out infinite;
     z-index: -1;
@@ -303,7 +293,6 @@ nav a.active {
     text-transform: uppercase;
     letter-spacing: 4px;
     position: relative;
-    /* The glitch animation is CSS-based and remains */
     animation: glitch 1.8s infinite;
     text-shadow: 0 0 8px rgba(224, 58, 95, 0.6);
 }
@@ -341,9 +330,6 @@ nav a.active {
     0%, 100% { filter: drop-shadow(0 0 15px rgba(224, 58, 95, 0.8)); }
     50% { filter: drop-shadow(0 0 40px rgba(224, 58, 95, 1)); }
 }
-
-/* Removed .typing-container and .typing-text as they were JavaScript-dependent */
-/* The .cursor was also JavaScript-dependent */
 
 .head-description {
     font-size: 1.9rem;
@@ -496,10 +482,10 @@ nav a.active {
 
 .head-image-container {
     position: relative;
-    width: 480px; /* Default for desktop */
-    height: 480px; /* Default for desktop */
+    width: 480px;
+    height: 480px;
     margin: 0 auto;
-    aspect-ratio: 1 / 1; /* Ensures it's always a circle/square */
+    aspect-ratio: 1 / 1;
 }
 
 .head-image img {
@@ -622,7 +608,7 @@ section {
 .skills { animation-delay: 0.8s; }
 #education-activities { animation-delay: 1.0s; }
 #experience { animation-delay: 1.2s; }
-.projects { animation-delay: 1.4s; } /* Changed from .portfolio */
+.projects { animation-delay: 1.4s; }
 .testimonials { animation-delay: 1.6s; }
 .contact { animation-delay: 1.8s; }
 footer { animation-delay: 2.0s; }
@@ -1232,8 +1218,7 @@ footer { animation-delay: 2.0s; }
 }
 
 
-/* Renamed .portfolio-grid to .projects-grid and .portfolio-item to .project-item */
-.portfolio-grid { /* This class name is used in HTML for the grid container */
+.portfolio-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
     gap: 4.5rem;
@@ -1241,7 +1226,7 @@ footer { animation-delay: 2.0s; }
     margin: 0 auto;
 }
 
-.portfolio-item { /* This class name is used in HTML for individual items */
+.portfolio-item {
     background: var(--gradient-card);
     border-radius: 30px;
     border: 1px solid rgba(224, 58, 95, 0.4);
@@ -1663,12 +1648,11 @@ footer::before {
         order: -1;
     }
     .head-image-container {
-        /* Adjusted for responsiveness */
-        width: 60vw; /* Use viewport width for responsiveness */
-        height: 60vw; /* Maintain aspect ratio with viewport height */
-        max-width: 350px; /* Cap the size for larger tablets */
-        max-height: 350px; /* Cap the size for larger tablets */
-        margin: 0 auto; /* Ensure centering */
+        width: 60vw;
+        height: 60vw;
+        max-width: 350px;
+        max-height: 350px;
+        margin: 0 auto;
     }
     .social-links {
         flex-direction: row;
@@ -1717,57 +1701,48 @@ footer::before {
 @media (max-width: 768px) {
     header {
         padding: 2rem 3%;
-        /* Increased opacity for better visibility on mobile */
         background: rgba(0, 0, 0, 0.6);
     }
-    /* Show hamburger on mobile */
     .hamburger {
         display: flex;
     }
-    /* Hide nav by default on mobile, slide in when checkbox is checked */
     nav {
-        display: flex; /* Changed from none to flex to enable transition from off-screen */
+        display: flex;
         flex-direction: column;
         position: absolute;
         top: 100%;
         left: 0;
         width: 100%;
-        /* Slightly increased opacity for better visibility */
         background: rgba(0, 0, 0, 0.95);
         backdrop-filter: blur(15px);
         border-top: 1px solid rgba(224, 58, 95, 0.2);
         padding: 2rem 0;
         gap: 1.5rem;
         transition: transform 0.3s ease-in-out;
-        transform: translateY(-100%); /* Start off-screen */
-        pointer-events: none; /* Disable interaction when hidden */
-        opacity: 0; /* Make it invisible when hidden */
+        transform: translateY(-100%);
+        pointer-events: none;
+        opacity: 0;
     }
 
-    /* When checkbox is checked, show and slide in the nav */
     .hidden-checkbox:checked ~ nav {
-        transform: translateY(0); /* Slide into view */
-        pointer-events: all; /* Enable interaction when visible */
-        opacity: 1; /* Make it visible */
+        transform: translateY(0);
+        pointer-events: all;
+        opacity: 1;
     }
 
     nav a {
         padding: 1rem 0;
         font-size: 1.8rem;
-        text-align: center; /* Center links in mobile menu */
+        text-align: center;
     }
     .head {
-        min-height: auto; /* Allow height to adjust to content on mobile */
-        padding-top: 10rem; /* Add some top padding */
-        padding-bottom: 5rem; /* Add some bottom padding */
+        min-height: auto;
+        padding-top: 10rem;
+        padding-bottom: 5rem;
     }
     .head-title {
         font-size: 4.5rem;
     }
-    /* Removed .typing-text styles as it's JavaScript-dependent */
-    /* .typing-text {
-        font-size: 2.2rem;
-    } */
     .head-stats {
         flex-direction: column;
         gap: 2rem;
@@ -1792,7 +1767,7 @@ footer::before {
         font-size: 2.8rem;
     }
     .services-grid,
-    .portfolio-grid, /* Kept for existing HTML structure, but consider renaming to .projects-grid */
+    .portfolio-grid,
     .testimonial-grid {
         grid-template-columns: 1fr;
     }
@@ -1837,16 +1812,12 @@ footer::before {
     .head-title {
         font-size: 3.5rem;
     }
-    /* Removed .typing-text styles as it's JavaScript-dependent */
-    /* .typing-text {
-        font-size: 1.8rem;
-    } */
     .head-image-container {
-        width: 75vw; /* Adjusted for very small phones */
-        height: 75vw; /* Maintain aspect ratio */
-        max-width: 200px; /* Smaller max size for very narrow screens */
-        max-height: 200px; /* Smaller max size for very narrow screens */
-        margin: 0 auto; /* Ensure centering */
+        width: 75vw;
+        height: 75vw;
+        max-width: 200px;
+        max-height: 200px;
+        margin: 0 auto;
     }
     .section-title {
         font-size: 3rem;
