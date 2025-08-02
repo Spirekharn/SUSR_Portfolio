@@ -1716,6 +1716,8 @@ footer::before {
 @media (max-width: 768px) {
     header {
         padding: 2rem 3%;
+        /* Increased opacity for better visibility on mobile */
+        background: rgba(0, 0, 0, 0.6);
     }
     /* Show hamburger on mobile */
     .hamburger {
@@ -1729,7 +1731,8 @@ footer::before {
         top: 100%;
         left: 0;
         width: 100%;
-        background: rgba(0, 0, 0, 0.98);
+        /* Slightly increased opacity for better visibility */
+        background: rgba(0, 0, 0, 0.95);
         backdrop-filter: blur(15px);
         border-top: 1px solid rgba(224, 58, 95, 0.2);
         padding: 2rem 0;
