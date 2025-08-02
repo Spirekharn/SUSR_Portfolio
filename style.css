@@ -495,10 +495,9 @@ nav a.active {
 
 .head-image-container {
     position: relative;
-    width: 480px; /* Keep for desktop */
-    height: 480px; /* Keep for desktop */
+    width: 480px;
+    height: 480px;
     margin: 0 auto;
-    aspect-ratio: 1 / 1; /* Ensures it's always a circle/square */
 }
 
 .head-image img {
@@ -745,6 +744,7 @@ footer { animation-delay: 2.0s; }
     display: flex;
     align-items: center;
     justify-content: center;
+    color: white;
     font-size: 2.4rem;
     font-weight: bold;
     flex-shrink: 0;
@@ -1609,6 +1609,21 @@ footer::before {
     z-index: 1;
 }
 
+.footer-social a {
+    width: 55px;
+    height: 55px;
+    background: rgba(224, 58, 95, 0.2);
+    border: 1px solid rgba(224, 58, 95, 0.5);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-crimson);
+    font-size: 2.4rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.6);
+}
+
 .footer-social a:hover {
     background: var(--gradient-primary);
     color: white;
@@ -1662,10 +1677,8 @@ footer::before {
         order: -1;
     }
     .head-image-container {
-        /* Adjusted for responsiveness */
-        max-width: 350px; /* Max width for larger mobile/tablet */
-        width: 80%; /* Fluid width based on parent */
-        height: auto; /* Height adjusts with aspect ratio */
+        width: 350px;
+        height: 350px;
     }
     .social-links {
         flex-direction: row;
@@ -1831,10 +1844,8 @@ footer::before {
         font-size: 1.8rem;
     } */
     .head-image-container {
-        /* Adjusted for responsiveness */
-        max-width: 280px; /* Max width for smaller phones */
-        width: 90%; /* Even more fluid for very small screens */
-        height: auto;
+        width: 280px;
+        height: 280px;
     }
     .section-title {
         font-size: 3rem;
